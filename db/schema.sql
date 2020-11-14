@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS reel_review_blog_db;
+DROP DATABASE IF EXISTS reel_reviews_blog_db;
 
-CREATE DATABASE real_reviews_blog_db;
+CREATE DATABASE reel_reviews_blog_db;
