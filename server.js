@@ -6,6 +6,12 @@ const exphbs = require('express-handlebars');
 const helpers = require('./utils/helpers');
 
 const app = express();
+
+if (process.env.NODE_ENV !== 'production') {
+    const dotenv = require('dotenv')
+    dotenv.config();
+}
+
 const PORT = process.env.PORT || 3001;
 
 // connects the session to sequelize database
@@ -41,5 +47,5 @@ app.use(routes);
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log(`Listening now on Port ${PORT}`));
+    app.listen(PORT, () => console.log(`Listening now on Port ${process.env.PORT}`));
 });
