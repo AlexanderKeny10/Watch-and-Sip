@@ -17,5 +17,5 @@ function signupFormHandler(event) {
       }).then((response) => {console.log(response)})
     }
   }
-  As you can see in the code, we added a conditional to
+//   As you can see in the code, we added a conditional to
   document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
