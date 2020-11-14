@@ -34,20 +34,3 @@
 Finally, you must add your project to the portfolio that you created in Module 2.
 ​
 **More details about the project will be provided in the lessons for Module 15 in Canvas.**
-
-
-
-
-
-//////////////////
-**const path = require('path'); inside server.js
-temp styles in style.css
-added photos
-**app.use(express.static(path.join(__dirname, 'public')));
-create homepage
-npm install bootstrap
-add nav bar
-trying to set background
-
-added in home routes
-change res.render in homeroutes
