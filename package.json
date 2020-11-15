@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Aken00/reel-reviews-blog#readme",
   "dependencies": {
+    "axios": "^0.21.0",
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
     "express": "^4.17.1",
