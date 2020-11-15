@@ -14,7 +14,8 @@ router.get('/', (req, res) => {
 axios({
   url: `https://api.themoviedb.org/3/search/movie?api_key=5a6e2163790bbd3d160e06904e80d572&language=en-US&query=${userInput}&page=1&include_adult=false`,
   method: 'get',
-}) 
+})
+
   .then(response => { 
     res.json(response.data)
   }
