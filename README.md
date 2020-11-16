@@ -62,7 +62,7 @@ WORKING TITLE is an entertainment search app that allows the user to search for 
 MVC Paradigm
 
 ## Final Statements/ Conclusion
-- Had a difficult time finding an API that didn't have length provisions  
+- Had a difficult time finding an API that didn't have lengthy rules for usage
 - Swithed to Axios method instead of Fetch for the routes 
 
 
