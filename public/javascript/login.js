@@ -1,3 +1,4 @@
+console.log("javascript")
 function signupFormHandler(event) {
     event.preventDefault();
   
