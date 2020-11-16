@@ -7,11 +7,11 @@ const axios = require('axios')
 
 // Search bar with drop down menu option saying "search by title and genre"
 router.get('/', (req, res) => {
-  // Search by title or gnere
+// Search by title or gnere
   let userInput = '';
   console.log("title or genre");
 
-  // axios all data from API
+// axios all data from API
 axios({
   url: `https://api.themoviedb.org/3/search/movie?api_key=5a6e2163790bbd3d160e06904e80d572&language=en-US&query=${userInput}&page=1&include_adult=false`,
   method: 'get',
