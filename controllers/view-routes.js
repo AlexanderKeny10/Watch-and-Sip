@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth');
 
 // 
 
-router.get('/', (req, res) => {
+router.get('/', withAuth,(req, res) => {
     console.log(req.session);
     console.log('======================');
       Review.findAll({
@@ -56,18 +56,18 @@ router.get('/', (req, res) => {
         'created_at',
       ],
       include: [
-        {
-          model: Comment,
-          attributes: ['id', 'post_id', 'user_id', 'created_at'],
-          include: {
-            model: User,
-            attributes: ['username']
-          }
-        },
-        {
-          model: User,
-          attributes: ['username']
-        }
+        // {
+        //   model: Comment,
+        //   attributes: ['id', 'post_id', 'user_id', 'created_at'],
+        //   include: {
+        //     model: User,
+        //     attributes: ['username']
+        //   }
+        // },
+        // {
+        //   model: User,
+        //   attributes: ['username']
+        // }
       ]
     })
     .then(dbPostData => {
@@ -87,5 +87,19 @@ router.get('/', (req, res) => {
     });
   });
   
+  router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+
+    
+    res.render('login');
+  });
+
+  router.get('/signup', (req, res) => {
+    res.render('signup');
+    return;
+  });
 
 module.exports = router;

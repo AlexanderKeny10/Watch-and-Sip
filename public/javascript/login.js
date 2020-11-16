@@ -15,15 +15,12 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace('/dashboard');
+        document.location.replace('/');
       } else {
-        `<div>
-
-        
-        </div>`
+        // if ok will procced
       }
     } else {
-        // redirect user to refresh page. 
+      // if not of redirect to main 
         // message user "password/username incorect" red text below.
     }
   }
