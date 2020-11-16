@@ -6,7 +6,7 @@ const viewRoutes = require('./view-routes.js');
 
 router.use('/search', searchRoutes); // calls moviedb API
 router.use('/api', apiRoutes); // post/get users, post/get reviews
-router.use('/dashboard', viewRoutes); // routes to handlebars views
+router.use('/', viewRoutes); // routes to handlebars views
 
 
 router.use((req, res) => {

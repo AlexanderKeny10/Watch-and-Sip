@@ -1,12 +1,14 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Comment } = require('../models');
+const { Review, User, } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, (req, res) => {
+// 
+
+router.get('/', (req, res) => {
     console.log(req.session);
     console.log('======================');
-      Post.findAll({
+      Review.findAll({
         where: {
           user_id: req.session.user_id
         },
@@ -17,23 +19,23 @@ router.get('/', withAuth, (req, res) => {
           'created_at',
         ],
         include: [
-          {
-            model: Comment,
-            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-            include: {
-              model: User,
-              attributes: ['username']
-            }
-          },
-          {
-            model: User,
-            attributes: ['username']
-          }
+          // {
+          //   // model: Comment,
+          //   // attributes: ['id', 'post_id', 'user_id', 'created_at'],
+          //   // include: {
+          //   //   model: User,
+          //   //   attributes: ['username']
+          //   // }
+          // },
+          // {
+          //   model: User,
+          //   attributes: ['username']
+          // }
         ]
       })
         .then(dbPostData => {
           const posts = dbPostData.map(post => post.get({ plain: true }));
-          res.render('dashboard', { posts, loggedIn: true });
+          res.render('allReviews', { posts, loggedIn: true });
         })
         .catch(err => {
           console.log(err);
@@ -42,7 +44,7 @@ router.get('/', withAuth, (req, res) => {
   });
 
   router.get('/edit/:id', withAuth, (req, res) => {
-    Post.findOne({
+    Review.findOne({
       where: {
         user_id: req.session.user_id,
         id: req.params.id
@@ -56,7 +58,7 @@ router.get('/', withAuth, (req, res) => {
       include: [
         {
           model: Comment,
-          attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+          attributes: ['id', 'post_id', 'user_id', 'created_at'],
           include: {
             model: User,
             attributes: ['username']
