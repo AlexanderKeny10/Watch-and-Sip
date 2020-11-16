@@ -27,6 +27,10 @@ This project was created as an assignment for the PennLPS Fullstack Bootcamp.
 - Node.js
 - CSS/Bootstrap
 - JavaScript
+- Express
+- Express-Session
+- dotenv
+- bcrypt
 - The Movie Database API
 - MySQL/Sequelize ORM
 - Heroku
