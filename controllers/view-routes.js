@@ -14,8 +14,6 @@ router.get('/', withAuth,(req, res) => {
         },
         attributes: [
           'id',
-          'post_content',
-          'title',
           'created_at',
         ],
         include: [
@@ -34,8 +32,8 @@ router.get('/', withAuth,(req, res) => {
         ]
       })
         .then(dbPostData => {
-          const posts = dbPostData.map(post => post.get({ plain: true }));
-          res.render('allReviews', { posts, loggedIn: true });
+          const review = dbPostData.map(post => post.get({ plain: true }));
+          res.render('allReviews', { review, loggedIn: true });
         })
         .catch(err => {
           console.log(err);
@@ -51,8 +49,6 @@ router.get('/', withAuth,(req, res) => {
       },
       attributes: [
         'id',
-        'post_content',
-        'title',
         'created_at',
       ],
       include: [

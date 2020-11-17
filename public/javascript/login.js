@@ -5,7 +5,7 @@ async function loginFormHandler(event) {
     const password = document.querySelector('#password-login').value.trim();
   
     if (username && password) {
-      const response = await fetch('/api/users/login', {
+      const response = await fetch('/api/user/login', {
         method: 'post',
         body: JSON.stringify({
           username,
@@ -18,10 +18,12 @@ async function loginFormHandler(event) {
         document.location.replace('/');
       } else {
         // if ok will procced
+        return response.json()
       }
     } else {
       // if not of redirect to main 
         // message user "password/username incorect" red text below.
+        window.confirm('password or username is incorrect')
     }
   }
   

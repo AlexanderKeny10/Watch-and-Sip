@@ -3,10 +3,10 @@ const { User } = require('../../models');
 
 // Creates a new user
 router.post('/', (req, res) => {
-    // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
+    // expects {username: 'Lernantino', password: 'password1234'}
     User.create({
         username: req.body.username,
-        email: req.body.email,
+        // email: req.body.email,
         password: req.body.password
     })
         .then((result) => {
@@ -24,17 +24,21 @@ router.post('/', (req, res) => {
 router.post('/login', (req, res) => {
     User.findOne({
         where: {
-            email: req.body.email
+            username: req.body.username
         }
     }).then((result) => {
         if (!result) {
-            res.status(400).json({ message: 'No user with that email address!' });
+          console.log('username for login')
+            res.status(400).json({ message: 'No user with that username!' });
             return;
         }
 
         const validPassword = result.checkPassword(req.body.password);
+        console.log('👻',req.body)
+        console.log('☠️',req.body.password)
 
         if (!validPassword) {
+          console.log('password for login')
             res.status(400).json({ message: 'Incorrect password!' });
             return;
         }
