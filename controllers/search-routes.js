@@ -18,13 +18,17 @@ router.get('/movie/:movie', (req, res) => {
 });
 
 router.get('/tvshow', (req, res) => {
-  const userInput = req.query.tvshow; //query needs tvshow key
+  const userInput = req.params.tvshow; //query needs tvshow key
   axios({
     url: `https://api.themoviedb.org/3/search/tv?api_key=5a6e2163790bbd3d160e06904e80d572&language=en-US&query=${userInput}&page=1&include_adult=false`,
     method: 'get',
   })
     .then(response => {
-      res.json(response.data);
+      const tvResults = response.data.results
+      console.log(tvResults)
+      res.render('tv-search',{
+        layout: 'main',
+        tvResults}) 
     });
 });
 

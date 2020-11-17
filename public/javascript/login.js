@@ -3,7 +3,6 @@ async function loginFormHandler(event) {
   
     const username = document.querySelector('#user-login').value;
     const password = document.querySelector('#password-login').value;
-    console.log('🎃',username, '👎🏿',password)
     if (username && password) {
       const response = await fetch('/api/user/login', {
         method: 'post',
@@ -27,6 +26,7 @@ async function loginFormHandler(event) {
     }
   }
   
+  // Will eventually move signup form to it's own .js file
   async function signupFormHandler(event) {
     event.preventDefault();
     
