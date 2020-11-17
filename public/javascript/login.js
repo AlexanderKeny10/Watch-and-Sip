@@ -1,9 +1,9 @@
 async function loginFormHandler(event) {
     event.preventDefault();
   
-    const username = document.querySelector('#user-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
-  
+    const username = document.querySelector('#user-login').value;
+    const password = document.querySelector('#password-login').value;
+    console.log('🎃',username, '👎🏿',password)
     if (username && password) {
       const response = await fetch('/api/user/login', {
         method: 'post',
@@ -18,7 +18,7 @@ async function loginFormHandler(event) {
         document.location.replace('/');
       } else {
         // if ok will procced
-        return response.json()
+        console.log(response.statusText)
       }
     } else {
       // if not of redirect to main 
@@ -34,7 +34,7 @@ async function loginFormHandler(event) {
     const password = document.querySelector('#password-signup').value.trim();
 
     if (username && password) {
-        const response = await fetch('/api/users', {
+        const response = await fetch('/api/user', {
             method: 'post',
             body: JSON.stringify({
             username,

@@ -10,10 +10,13 @@ fetch(`/search/movie/${movieTitle}`, {
 method: "get",
 headers: { 'Content-Type': 'application/json' },
 })
+// console.log(movieTitle)
     .then(function() {
+        document.location.replace('movie-search');
+        // document.location.reload();
         console.log("working btn")
     });
 
 }
 // remember this pattern
-document.querySelector('#searchMovieBtn').addEventListener('submit', movieFormHandler);
+document.querySelector('#movie-form').addEventListener('submit', movieFormHandler);

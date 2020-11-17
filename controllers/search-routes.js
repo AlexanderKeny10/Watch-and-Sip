@@ -8,8 +8,12 @@ router.get('/movie/:movie', (req, res) => {
     method: 'get',
   })
     .then(response => {
-      res.json(response.data);
-      // have the data post to a page in handlebars
+      const movieResults = response.data.results
+      // res.json(response.data);
+      console.log(response.data.results)
+      res.render('movie-search', {
+        layout: 'main',
+        movieResults})
     });
 });
 
@@ -21,7 +25,6 @@ router.get('/tvshow', (req, res) => {
   })
     .then(response => {
       res.json(response.data);
-      // have the data post to a page in handlebars
     });
 });
 
@@ -32,7 +35,6 @@ router.get('/cocktail', (req, res) => {
   })
     .then(response => {
       res.json(response.data);
-      // have the data post to a page in handlebars
     });
 });
 
