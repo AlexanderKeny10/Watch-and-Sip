@@ -1,18 +1,13 @@
-<section>
-  <h2>Create New Post</h2>
-
-  <form class="new-post-form">
-    <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
-    </div>
-    <div>
-      <label for="post-url">Link</label>
-      <input id="post-url" name="post-url" />
-    </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
-</section>
+<ul class="list-group list-group-flush">
+    <li class='h2 card-title list-group-item'>{{movie.title}} </li>
+    {{!-- Probably need a different list item for the movie image --}}
+    <li class='card-subtitle list-group-item'>{{movie.image}}</li>
+    <li class='h4 card-title list-group-item'>{{movie.synopsis}}</li>
+    <li class='card-subtitle list-group-item'>
+        {{!-- Not too sure if we need this href --}}
+        <a href="/dashboard/edit-user/{{author.id}}">Update your review</a>
+    </li>
+</ul>
 
 <div>
 <p> Hey loook</p>
