@@ -34,18 +34,18 @@ router.get('/tv/:tv', (req, res) => {
     });
 });
 
-router.get('/search/:search', (req, res) => {
-  const userInput = req.params.search; //query needs tvshow key
-  axios({
-    url: `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${userInput}`,
-    method: 'get',
-  })
-  const cocktailResults = response.data.results
-  console.log(response.data.results)
-  res.render('cocktails', {
-    layout: 'main',
-    cocktailResults
-  })
-});
+// router.get('/search/:search', (req, res) => {
+//   const userInput = req.params.search; //query needs tvshow key
+//   axios({
+//     url: `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${userInput}`,
+//     method: 'get',
+//   })
+//   const cocktailResults = response.data.results
+//   console.log(response.data.results)
+//   res.render('cocktails', {
+//     layout: 'main',
+//     cocktailResults
+//   })
+// });
 
 module.exports = router;
