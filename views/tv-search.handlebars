@@ -14,18 +14,17 @@
   </form>
 </section>
 
-{{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
-  <ol>
-    {{#each posts as |post|}}
-    <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-    </li>
-    {{/each}}
-  </ol>
-</section>
-{{/if}}
-
-<script src="/javascript/add-review.js"></script>
+<div>
+<p> Hey loook tv</p>
+{{#each tvResults}}
+  <div class="card">
+    <div class="card-header">
+    <div class="card-body">
+        <div>
+            {{Title}}
+        </div>
+    </div>
+    </div>
+  </div>
+{{/each}}
+</div>

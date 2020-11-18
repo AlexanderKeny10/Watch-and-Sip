@@ -24,7 +24,7 @@ router.post('/', withAuth, (req, res) => {
     // post request needs keys review_text and user_id
     Review.create({
         review_text: req.body.review_text,
-        user_id: req.body.user_id,
+        user_id: req.body.userId,
     })
         .then(result => {
             res.json(result);
