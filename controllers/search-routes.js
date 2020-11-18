@@ -10,7 +10,6 @@ router.get('/movie/:movie', (req, res) => {
     // 
     .then(response => {
       const movieResults = response.data.results
-      // res.json(response.data);
       console.log(response.data.results)
       res.render('movie-search', {
         layout: 'main',
@@ -19,15 +18,15 @@ router.get('/movie/:movie', (req, res) => {
     });
 });
 
-router.get('/tvshow/:tvshow', (req, res) => {
-  const userInput = req.params.tvshow; //query needs tvshow key
+router.get('/tv/:tv', (req, res) => {
+  const userInput = req.params.tv; //query needs tvshow key
   axios({
-    url: `https://api.themoviedb.org/3/search/tv?api_key=5a6e2163790bbd3d160e06904e80d572&language=en-US&query=${userInput}&page=1&include_adult=false`,
+    url: `https://api.themoviedb.org/3/search/tv?api_key=5a6e2163790bbd3d160e06904e80d572&language=en-US&&query=${userInput}&page=1&include_adult=false`,
     method: 'get',
   })
     .then(response => {
       const tvResults = response.data.results
-      console.log(tvResults)
+      console.log(response.data.results)
       res.render('tv-search', {
         layout: 'main',
         tvResults
@@ -35,14 +34,18 @@ router.get('/tvshow/:tvshow', (req, res) => {
     });
 });
 
-router.get('/cocktail', (req, res) => {
+router.get('/search/:search', (req, res) => {
+  const userInput = req.params.search; //query needs tvshow key
   axios({
-    url: `https://www.thecocktaildb.com/api/json/v1/1/random.php`,
+    url: `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${userInput}`,
     method: 'get',
   })
-    .then(response => {
-      res.json(response.data);
-    });
+  const cocktailResults = response.data.results
+  console.log(response.data.results)
+  res.render('cocktails', {
+    layout: 'main',
+    cocktailResults
+  })
 });
 
 module.exports = router;

@@ -1,30 +1,12 @@
-<section>
-  <h2>Create New Post</h2>
 
-  <form class="new-post-form">
-    <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
-    </div>
-    <div>
-      <label for="post-url">Link</label>
-      <input id="post-url" name="post-url" />
-    </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
-</section>
-
-<div>
-<p> Hey loook tv</p>
 {{#each tvResults}}
-  <div class="card">
-    <div class="card-header">
-    <div class="card-body">
-        <div>
-            {{Title}}
-        </div>
-    </div>
-    </div>
+<div class="card" style="width: 18rem;">
+    {{#if this.poster_path}}
+  <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" class="card-img-top" alt="...">
+  {{/if}}
+  <div class="card-body">
+    <h5 class="card-title">{{this.name}}</h5>
+    <p class="card-text">{{this.overview}}</p>
   </div>
-{{/each}}
 </div>
+{{/each}}
