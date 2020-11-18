@@ -1,4 +1,7 @@
+
+
 async function fetchMovies() {
+<<<<<<< HEAD
   try {
     const movieResponse = await fetch('https://api.themoviedb.org/3/search/movie?api_key=<<5a6e2163790bbd3d160e06904e80d572>>&language=en-US&page=1&include_adult=false')
     const movieJson = await movieResponse.json();
@@ -6,6 +9,16 @@ async function fetchMovies() {
   } catch(error) {
     // Handle some errors
     return Promise.reject(error);
+=======
+    try {
+      const movieResponse = await fetch('https://api.themoviedb.org/3/search/movie?api_key=<<5a6e2163790bbd3d160e06904e80d572>>&language=en-US&page=1&include_adult=false')
+      const movieJson = await movieResponse.json();
+      return movieJson
+    } catch(error) {
+      // Handle some errors
+      return Promise.reject(error);
+    }
+>>>>>>> feature/backend1
   }
 }
 function fetchMetaData() {
