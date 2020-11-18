@@ -1,15 +1,5 @@
 
 {{#each movieResults}}
-{{!-- <ul class="list-group list-group-flush">
-    <li class='h2 card-title list-group-item'>{{movie.title}} </li>
-    {{!-- Probably need a different list item for the movie image --}}
-    <li class='card-subtitle list-group-item'>{{movie.poster_path}}</li>
-    <li class='h4 card-title list-group-item'>{{movie.overview}}</li>
-    <li class='card-subtitle list-group-item'>
-        {{!-- Not too sure if we need this href --}}
-        <a href="/dashboard/edit-user/{{author.id}}">Update your review</a>
-    </li>
-</ul> --}}
 <div class="card" style="width: 18rem;">
     {{#if this.poster_path}}
   <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" class="card-img-top" alt="...">
@@ -19,15 +9,4 @@
     <p class="card-text">{{this.overview}}</p>
   </div>
 </div>
-
-{{!-- <div>
-<p> Hey loook</p>
-
-<div class="entry">
-  <h1>{{title}}</h1>
-  <div class="body">
-    {{body}}
-  </div>
-</div> --}}
 {{/each}}
-{{!-- </div> --}}

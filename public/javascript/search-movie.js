@@ -24,7 +24,6 @@ const movieFormHandler = async function (event) {
     //         console.log(data)
     //     })
 
-
 }
 // remember this pattern
 document.querySelector('#movie-form').addEventListener('submit', movieFormHandler);
