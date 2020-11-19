@@ -1,52 +1,3 @@
-{{!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To-Watch</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="/stylesheet/style.css">
-
-</head>
-
-<body>
-
-<main class="flex-row justify-space-between">
-  {{!-- entry into main layout. All handlebars will go here --}}
-{{{body}}}
-<div class="col-12 col-md-4">
-  <h3 class="card-header text-uppercase">Search By Title</h3>
-  <form id="movie-form" class="card-body">
-    <label class="form-label" for="movieTitle"> Title </label>
-    <input name="movieTitle" id="movieTitle" type="text" autofocus="true" class="form-input" />
-    <button type="submit" class="btn" id="searchMovieBtn">Get movie title </button>
-  </form>
-  <form id="tv-form" class="card-body">
-    <label class="form-label" for="tvTitle"> Title </label>
-    <input name="tvTitle" id="tvTitle" type="text" autofocus="true" class="form-input" />
-    <button type="submit" class="btn" id="searchTvBtn">Get TV Show title </button>
-  </form>
-  <form id="cocktail-form" class="card-body">
-    <label class="form-label" for="cocktail"> Pick a Cocktail </label>
-    <input name="cocktail" id="cocktail" type="text" autofocus="true" class="form-input" />
-    <button type="submit" class="btn" id="searchCocktailBtn">Get a cocktail </button>
-  </form>
-</div>
-
-</main>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="/javascript/search-movie.js"></script>
-<script src="/javascript/search-tv.js"></script>
-<script src="/javascript/cocktails.js"></script>
-
-</body> --}}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,6 +26,26 @@
     </header>
     <main class="col-auto">
       {{{body}}}
+    <main class="flex-row justify-space-between"></main>  
+      <div class="col-12 col-md-4" id="searchBox">
+  <h3 class="card-header text-uppercase">Search By Title</h3>
+  <form id="movie-form" class="card-body">
+    <label class="form-label" for="movieTitle"> Title </label>
+    <input name="movieTitle" id="movieTitle" type="text" autofocus="true" class="form-input" />
+    <button type="submit" class="btn" id="searchMovieBtn">Get movie title </button>
+  </form>
+  <form id="tv-form" class="card-body">
+    <label class="form-label" for="tvTitle"> Title </label>
+    <input name="tvTitle" id="tvTitle" type="text" autofocus="true" class="form-input" />
+    <button type="submit" class="btn" id="searchTvBtn">Get TV Show title </button>
+  </form>
+  <form id="cocktail-form" class="card-body">
+    <label class="form-label" for="cocktail"> Pick a Cocktail </label>
+    <input name="cocktail" id="cocktail" type="text" autofocus="true" class="form-input" />
+    <button type="submit" class="btn" id="searchCocktailBtn">Get a cocktail </button>
+  </form>
+</div>
+
     </main>
     <footer class="flex-row justify-center">
       &copy; Thanks For Browsing
@@ -91,3 +62,7 @@
 <script src="/public/javascript/search-movie.js"></script>
 <script src="/public/javascript/search-tv.js"></script>
 {{!-- <script src="/public/javascript/cocktails.js"></script> --}}
+
+
+
+
