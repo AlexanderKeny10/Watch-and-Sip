@@ -12,23 +12,45 @@
 ​
 <body>
 
-<body class="flex-column min-100-vh">
-  <nav class="navbar">
-    <ul>
-      <li class="li-inline nav-item"><a href="/">Home</a></li>
-      <li class="li-inline nav-item"><a href="/dashboard">Find Movies</a></li>
-      <li class="li-inline nav-item"><a href="/login">Find Tv</a></li>
-      <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
-    </ul>
-  </nav>
   <header class="hero">
-    <h1 class="app-title"><a href="/">Film Choices</a></h1>
+    <h1 class="app-title"><a href="/">Reel Reviews & Sip</a></h1>
   </header>
+
+{{!--  --}}
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Search Movie</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Search Tv</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#Login">Login</a>
+      </li>
+      {{#if loggedIn}}
+      <li class="nav-item">
+        <a class="nav-link" href="" id="logout-link">Logout</a>
+      </li>
+      <li>
+        <a href="/dashboard">Dashboard</a>
+      </li>
+        {{else}}
+      <li class="li-inline nav-item">
+        <a href="/login"></a>
+      </li>
+       {{/if}}
+    </ul>
+  </div>
+</nav>
 ​
   <main class="col-auto">
 {{!-- <main class="flex-row justify-space-between"> --}}
-
-  {{{body}}} 
   <div class="col-12 col-md-4">
   <h3 class="card-header text-uppercase">Search By Title</h3>
   <form id="movie-form" class="card-body">
@@ -47,7 +69,7 @@
     <button type="submit" class="btn" id="searchCocktailBtn">Get a cocktail </button>
   </form>
   </div>
-    
+      {{{body}}} 
   </main> 
 
   <footer class="flex-row justify-center">
