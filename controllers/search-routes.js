@@ -35,7 +35,7 @@ router.get('/tv/:tv', (req, res) => {
 });
 
 router.get('/search/:search', (req, res) => {
-  const userInput = req.params.search; //query needs tvshow key
+  const userInput = req.params.search; //query needs cocktail key
   axios({
     url: `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${userInput}`,
     method: 'get',
