@@ -4,6 +4,7 @@ const routes = require('./controllers');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const helpers = require('./utils/helpers');
+var _ = require('lodash'); 
 
 const app = express();
 
