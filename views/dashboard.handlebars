@@ -1,4 +1,4 @@
-<section>
+{{!-- <section>
   <h2>Create New Review</h2>
 
   <form class="new-post-form">
@@ -28,4 +28,32 @@
 </section>
 {{/if}}
 
+<script src="/javascript/add-review.js"></script> --}}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Film Choices</title>
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+<body class="flex-column min-100-vh">
+  <nav class="navbar">
+    <ul class="flex-row">
+      <li class="li-inline nav-item"><a href="/">Home</a></li>
+      <li class="li-inline nav-item"><a href="/sign-in">Sign In</a></li>
+      <li class="li-inline nav-item"><a href="#" id="all-reviews">Reviews</a></li>
+    </ul>
+  </nav>
+  <header class="hero">
+    <h1 class="app-title"><a href="/dashboard">Your Dashboard</a></h1>
+  </header>
+  <main class="col-auto">
+    {{{body}}}
+  </main>
+{{!-- <script src="/controllers/dashboard-routes.js"></script> --}}
 <script src="/javascript/add-review.js"></script>
+</html>
