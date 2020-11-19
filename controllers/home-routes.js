@@ -9,7 +9,6 @@ router.get('/', (req, res) => {
   Review.findAll({
     attributes: [
       'id',
-      'title',
       'created_at',
     ],
     include: [
@@ -49,7 +48,6 @@ router.get('/post/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'title',
       'created_at',
     ],
     include: [
