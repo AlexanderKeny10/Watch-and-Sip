@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Review, User, } = require('../models');
+const Review = require('../models/Review.js');
+const User = require('../models/User.js');
 const withAuth = require('../utils/auth');
 
 // 
@@ -25,10 +26,10 @@ router.get('/', withAuth,(req, res) => {
           //   //   attributes: ['username']
           //   // }
           // },
-          // {
-          //   model: User,
-          //   attributes: ['username']
-          // }
+          {
+            model: User,
+            attributes: ['username']
+          }
         ]
       })
         .then(dbPostData => {
@@ -60,10 +61,10 @@ router.get('/', withAuth,(req, res) => {
         //     attributes: ['username']
         //   }
         // },
-        // {
-        //   model: User,
-        //   attributes: ['username']
-        // }
+        {
+          model: User,
+          attributes: ['username']
+        }
       ]
     })
     .then(dbPostData => {
@@ -85,7 +86,7 @@ router.get('/', withAuth,(req, res) => {
   
   router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-      res.redirect('/');
+    res.redirect('/');
       return;
     }
 
