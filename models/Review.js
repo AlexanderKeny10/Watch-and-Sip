@@ -28,7 +28,7 @@ Review.init(
         underscored: true,
         modelName: 'review'
     }
-);
+)
 
 // Review.associate = function (models) {
    
