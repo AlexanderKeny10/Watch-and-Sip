@@ -6,7 +6,7 @@ class User extends Model {
     checkPassword(loginPw) {
         return loginPw == this.password;
     }
-    bulkCreate(){}
+    bulkCreate() { }
 }
 
 User.init(
@@ -48,6 +48,12 @@ User.init(
         underscored: true,
         modelName: 'User'
     }
+
 );
+
+// User.associate = function (models) {
+//     User.hasMany(models.review);
+// };
+
 
 module.exports = User;

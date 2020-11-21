@@ -13,6 +13,10 @@ Review.init(
             primaryKey: true,
             autoIncrement: true
         },
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         review_text: {
             type: DataTypes.STRING,
             allowNull: false
@@ -24,6 +28,10 @@ Review.init(
         underscored: true,
         modelName: 'review'
     }
-)
+);
+
+// Review.associate = function (models) {
+   
+// };
 
 module.exports = Review;
