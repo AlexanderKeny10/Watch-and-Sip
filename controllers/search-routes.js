@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const axios = require('axios')
+const axios = require('axios');
+const { response } = require('express');
 
 router.get('/movie/:movie', (req, res) => {
   const userInput = req.params.movie; // when you make front-end request, make sure query has key movie where it is a string that you will be searching on
@@ -34,18 +35,24 @@ router.get('/tv/:tv', (req, res) => {
     });
 });
 
-// router.get('/search/:search', (req, res) => {
-//   const userInput = req.params.search; //query needs tvshow key
-//   axios({
-//     url: `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${userInput}`,
-//     method: 'get',
-//   })
-//   const cocktailResults = response.data.results
-//   console.log(response.data.results)
-//   res.render('cocktails', {
-//     layout: 'main',
-//     cocktailResults
-//   })
-// });
+router.get('/search/:search', (req, res) => {
+  const userInput = req.params.search; //query needs cocktail key
+  axios({
+    url: `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${userInput}`,
+    method: 'get',
+  })
+
+  .then(response => {
+    console.log(response)
+    const cocktailResults = response.data.drinks
+  
+    res.render('cocktails', {
+      layout: 'main',
+      cocktailResults
+    })
+  })
+
+
+});
 
 module.exports = router;

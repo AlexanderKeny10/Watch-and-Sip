@@ -1,9 +1,41 @@
 const router = require('express').Router();
+const sequelize = require('../../config/connection');
 const { Review, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
-    Review.findAll({}, {
+    Review.findAll({
+        attributes: [
+            'id',
+            'title',
+            'review_text',
+            'created_at'],
+    },
+        {
+            include: [
+                {
+                    model: User,
+                    attributes: ['username']
+                }
+            ]
+        })
+        .then(dbPostData => res.json(dbPostData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+router.get('/:id', (req, res) => {
+    Review.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: [
+            'id',
+            'title',
+            'review_text',
+            'created_at'],
         include: [
             {
                 model: User,
@@ -11,8 +43,12 @@ router.get('/', (req, res) => {
             }
         ]
     })
-        .then(result => {
-            res.json(result);
+        .then(dbPostData => {
+            if (!dbPostData) {
+                res.status(404).json({ message: 'No post found with this id' });
+                return;
+            }
+            res.json(dbPostData);
         })
         .catch(err => {
             console.log(err);
@@ -21,8 +57,9 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
-    // post request needs keys review_text and user_id
+    // post request needs keys review_text and userId
     Review.create({
+        title: req.body.title,
         review_text: req.body.review_text,
         user_id: req.body.userId,
     })
@@ -38,6 +75,9 @@ router.post('/', withAuth, (req, res) => {
 router.put('/:id', withAuth, (req, res) => {
     Review.update(
         {
+            title: req.body.title
+        },
+        {
             review_text: req.body.review_text
         },
         {
@@ -46,12 +86,12 @@ router.put('/:id', withAuth, (req, res) => {
             }
         }
     )
-        .then(result => {
-            if (!result) {
+        .then(dbPostData => {
+            if (!dbPostData) {
                 res.status(404).json({ message: 'No review found with this id' });
                 return;
             }
-            res.json(result);
+            res.json(dbPostData);
         })
         .catch(err => {
             console.log(err);
@@ -65,19 +105,17 @@ router.delete('/:id', withAuth, (req, res) => {
             id: req.params.id
         }
     })
-        .then(result => {
-            if (!result) {
+        .then(dbPostData => {
+            if (!dbPostData) {
                 res.status(404).json({ message: 'No review found with this id' });
                 return;
             }
-            res.json(result);
+            res.json(dbPostData);
         })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
 });
-
-
 
 module.exports = router;

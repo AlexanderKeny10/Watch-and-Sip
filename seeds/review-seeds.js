@@ -2,36 +2,36 @@ const { Review } = require('../models');
 
 const reviewData = [
   {
-    review_text: 'Your app helped my boo and I find something fun to watch!  Lockdown sucks but your app does not LMAO', 
-    // user_id: '10',
+    title: 'review 1',
+    review_text: 'Your app helped my boo and I find something fun to watch!  Lockdown sucks but your app does not LMAO',
   },
   {
-    review_text: 'Love the random cocktail recipe search, what could be better than a good drink and a movie?', 
-    // user_id: '15',
+    title: 'review 2',
+    review_text: 'Love the random cocktail recipe search, what could be better than a good drink and a movie?',
   },
   {
+    title: 'review 3',
     review_text: '10/10 would recommend!',
-    // user_id: '25',
   },
   {
+    title: 'review 4',
     review_text: 'Not a fan but God bless',
-    // user_id: '61',
   },
   {
+    title: 'review 5',
     review_text: 'Ummm the app needs work but the idea is cute or whatever',
-    // user_id: '17',
   },
   {
-   review_text: 'My trash box ex dumped me during quarantine but I wont dump this app :)',
-    // user_id: '44',
+    title: 'review 6',
+    review_text: 'My trash box ex dumped me during quarantine but I wont dump this app :)',
   },
   {
+    title: 'review 7',
     review_text: 'I could have made a better app',
-    // user_id: '11',
   },
   {
+    title: 'review 8',
     review_text: 'Cold weather is a plague on humanity, and so is this damn pandemic but thank you for this app!',
-    // user_id: '37',
   },
 ];
 

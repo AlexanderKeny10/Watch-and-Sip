@@ -1,78 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
+​
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Watch & Sip</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Watch&Sip</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/stylesheet/style.css">
+​
 </head>
+​
+<body>
 
-  <header class="hero">
+    <header class="hero">
       <h1 class="app-title" ><a href="/">Watch & Sip</a></h1>
       <img src="\stylesheet\gif\goofypic.gif" alt="goofy" width="300" height="300">
     </header>
+  </header>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  {{!-- <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button> --}}
-  <div class="collapse navbar-collapse" id="navbarNav">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#Home">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#Dashboard">Dashboard</a>
+        <a class="nav-link" href="#">Search Movie</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#userLogin">Login</a>
+        <a class="nav-link" href="#">Search Tv</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#Login">Login</a>
+      </li>
+      {{#if loggedIn}}
+      <li class="nav-item">
+        <a class="nav-link" href="" id="logout-link">Logout</a>
+      </li>
+      <li>
+        <a href="/dashboard">Dashboard</a>
+      </li>
+        {{else}}
+      <li class="li-inline nav-item">
+        <a href="/login"></a>
+      </li>
+       {{/if}}
     </ul>
   </div>
 </nav>
-  
-    <main class="col-auto">
-      {{{body}}}
-     <div class="col-12 col-md-4">
-  <h3 class="card-header text-uppercase">Search By Title</h3>
+​
+  <main class="col-auto">
+{{!-- <main class="flex-row justify-space-between"> --}}
+  <div class="col-12 col-md-4">
+  <h3 class="card-header text-uppercase">Looking for options on what to watch tonight?  </h3>
   <form id="movie-form" class="card-body">
-    <label class="form-label" for="movieTitle"> Title </label>
+    <label class="form-label" for="movieTitle"> Enter a title or keyword the movie </label>
     <input name="movieTitle" id="movieTitle" type="text" autofocus="true" class="form-input" />
-    <button type="submit" class="btn" id="searchMovieBtn">Get movie title </button>
+    <button type="submit" class="btn" id="searchMovieBtn">Search Movies </button>
   </form>
   <form id="tv-form" class="card-body">
-    <label class="form-label" for="tvTitle"> Title </label>
+    <label class="form-label" for="tvTitle"> Enter a title or keyword for the tv show </label>
     <input name="tvTitle" id="tvTitle" type="text" autofocus="true" class="form-input" />
-    <button type="submit" class="btn" id="searchTvBtn">Get TV Show title </button>
+    <button type="submit" class="btn" id="searchTvBtn">Search TV Shows </button>
   {{{body}}}
   </form>
-  <form id="cocktail-form" class="card-body">
-    <label class="form-label" for="cocktail"> Pick a Cocktail </label>
+    <form id="drink-form" class="card-body">
+    <label class="form-label" for="cocktail"> Enter any cocktail for ingredients </label>
     <input name="cocktail" id="cocktail" type="text" autofocus="true" class="form-input" />
-    <button type="submit" class="btn" id="searchCocktailBtn">Get a cocktail </button>
+    <button type="submit" class="btn" id="searchCocktailBtn">Search Cocktail </button>
   </form> 
   </div>
-    </main>
-    <footer class="flex-row justify-center">
-      &copy; Thanks For Browsing
-      
-    </footer>
-  </body>
+      {{{body}}} 
+  </main> 
 
+  <footer class="flex-row justify-center">
+    &copy; Thanks For Browsing 
+  </footer>
+</body>
+​
 </html>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="/javascript/search-movie.js"></script>
-<script src="/javascript/search-tv.js"></script>
-<script src="/javascript/cocktails.js"></script>
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/javascript/search-movie.js"></script>
+    <script src="/javascript/search-tv.js"></script>
+    <script src="/javascript/cocktails.js"></script>
+    
