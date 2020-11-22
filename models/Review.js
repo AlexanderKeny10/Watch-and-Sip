@@ -30,8 +30,4 @@ Review.init(
     }
 )
 
-// Review.associate = function (models) {
-   
-// };
-
 module.exports = Review;

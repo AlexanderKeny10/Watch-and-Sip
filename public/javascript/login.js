@@ -19,11 +19,6 @@ async function loginFormHandler(event) {
         alert(response.statusText);
       }
     }
-    //  else {
-    //   // if not of redirect to main 
-    //     // message user "password/username incorect" red text below.
-    //     window.confirm('password or username is incorrect')
-    // }
   }
 
   document.querySelector('.login-form').addEventListener('submit', loginFormHandler);

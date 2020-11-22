@@ -1,5 +1,5 @@
 :root {
-  --primary: #000000;
+  --primary: #204779c0;
   --secondary: rgb(22, 162, 255);
   --tertiary: #f4f8f8;
   --light-dark: #83f736;
@@ -26,11 +26,16 @@
     margin: 0;
     padding: 0;
     font-family: "";
-    color: rgb(26, 78, 33);
+    color: rgb(0, 0, 0);
     line-height: 1.5;
     font-size: 16px;
     text-align: center;
   }
+
+  .card-body {
+    align-self: center;
+  }
+  
   img {
     border-radius: 8px;
   }
@@ -60,7 +65,7 @@
     background-color: rgb(22, 162, 255);
   }
   
-  .post-list {
+  .review-list {
     margin: 0;
     padding: 0;
   }
@@ -105,7 +110,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 1%;
-    /* background-color: turquoise; */
+    background-color: turquoise;
   }
   
   header h1 {
@@ -151,16 +156,16 @@
     background-color: #ff643d;
   }
   
-  .post {
+  .review {
     margin-bottom: 2%;
     line-height: 150%;
   }
 
-  .user-post {
+  .user-review {
     margin-top: 5%;
   }
   
-  .post .title span {
+  .review .title span {
     font-style: italic;
     font-size: 90%;
     color: #7d7d7d;
@@ -169,25 +174,6 @@
   .edit-link {
     display: block;
     margin: -1.5% 0 2% 0;
-  }
-  
-  .comment-form {
-    margin-bottom: 5%;
-  }
-  
-  .comment {
-    padding: 1%;
-    margin-bottom: 1%;
-  }
-  
-  .comment:nth-child(odd) {
-    background-color: #fff5eb;
-  }
-  
-  .comment .meta {
-    font-size: 90%;
-    margin-bottom: .5%;
-    opacity: .6;
   }
   
   .new-post-form input {
@@ -202,7 +188,15 @@
     margin-bottom: 1%;
     border-top: 1px solid #ccc;
     display: flex;
-    justify-content: left;
+    justify-content: space-around;
     padding: 1%;
     font-size: 110%;
+
   }
+
+  .devs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}

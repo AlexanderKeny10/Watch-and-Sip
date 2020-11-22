@@ -10,6 +10,8 @@ router.get('/', (req, res) => {
   Review.findAll({
     attributes: [
       'id',
+      'title',
+      'review_text',
       'created_at',
     ],
     include: [
