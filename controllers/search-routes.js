@@ -5,7 +5,7 @@ const { response } = require('express');
 router.get('/movie/:movie', (req, res) => {
   const userInput = req.params.movie; // when you make front-end request, make sure query has key movie where it is a string that you will be searching on
   axios({
-    url: `https://api.themoviedb.org/3/search/movie?api_key=5a6e2163790bbd3d160e06904e80d572&language=en-US&query=${userInput}&page=1&include_adult=false`,
+    url: `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY_MOV}&language=en-US&query=${userInput}&page=1&include_adult=false`,
     method: 'get',
   })
     .then(response => {
@@ -21,7 +21,7 @@ router.get('/movie/:movie', (req, res) => {
 router.get('/tv/:tv', (req, res) => {
   const userInput = req.params.tv; //query needs tvshow key
   axios({
-    url: `https://api.themoviedb.org/3/search/tv?api_key=5a6e2163790bbd3d160e06904e80d572&language=en-US&&query=${userInput}&page=1&include_adult=false`,
+    url: `https://api.themoviedb.org/3/search/tv?api_key=${process.env.API_KEY_TV}&language=en-US&&query=${userInput}&page=1&include_adult=false`,
     method: 'get',
   })
     .then(response => {
@@ -50,7 +50,6 @@ router.get('/search/:search', (req, res) => {
       cocktailResults
     })
   })
-
 
 });
 
