@@ -12,8 +12,8 @@ router.get('/movie/:movie', (req, res) => {
       const movieResults = response.data.results
       console.log(response.data.results)
       res.render('movie-search', {
-       // Possibly why it keeps logging out when searching
         layout: 'main',
+        loggedIn: req.session.loggedIn,
         movieResults
       })
     });
@@ -29,8 +29,8 @@ router.get('/tv/:tv', (req, res) => {
       const tvResults = response.data.results
       console.log(response.data.results)
       res.render('tv-search', {
-        // Possibly why it keeps logging out when searching
         layout: 'main',
+        loggedIn: req.session.loggedIn,
         tvResults
       })
     });
@@ -48,8 +48,8 @@ router.get('/search/:search', (req, res) => {
     const cocktailResults = response.data.drinks
   
     res.render('cocktails', {
-       // Possibly why it keeps logging out when searching
       layout: 'main',
+      loggedIn: req.session.loggedIn,
       cocktailResults
     })
   })

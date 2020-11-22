@@ -56,7 +56,7 @@
     <div class="col-12 col-md-7">
       <h3 class="card-header text-uppercase">Looking for options on what to watch tonight?</h3>
       <form id="movie-form" class="card-body">
-        <label class="form-label" for="movieTitle"> Enter a title or keyword the movie </label>
+        <label class="form-label" for="movieTitle"> Enter a title or keyword for the movie </label>
         <input name="movieTitle" id="movieTitle" type="text" autofocus="true" class="form-input" />
         <button type="submit" class="btn" id="searchMovieBtn">Get movie title </button>
       </form>
@@ -107,7 +107,9 @@
   <script src="/javascript/search-movie.js"></script>
   <script src="/javascript/search-tv.js"></script>
   <script src="/javascript/cocktails.js"></script>
+  {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
+  {{/if}}
 </body>
 ​
 

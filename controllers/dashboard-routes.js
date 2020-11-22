@@ -4,14 +4,13 @@ const Review = require('../models/Review.js');
 const User = require('../models/User.js');
 const withAuth = require('../utils/auth');
 
-// 
 
 router.get('/', withAuth,(req, res) => {
     console.log(req.session);
     console.log('======================');
       Review.findAll({
         where: {
-          id: req.session.userId
+          userId: req.session.userId
         },
         attributes: [
           'id',
@@ -29,8 +28,9 @@ router.get('/', withAuth,(req, res) => {
       })
         .then(dbPostData => {
           console.log(dbPostData)
+          console.log('Words to look for', req.session)
           const review = dbPostData.map((post) => post.get({ plain: true }));
-          console.log(review)
+          console.log("uervmeourhveiurhvoeloopll", review)
           res.render('dashboard', { review, loggedIn: true });
         })
         .catch(err => {

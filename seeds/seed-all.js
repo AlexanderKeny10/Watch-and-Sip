@@ -10,7 +10,7 @@ const seedAll = async() => {
     console.log("database synced")
     const response = await userSeeds();
     console.log('users seeded', response)
-    await reviewSeeds();
+    // await reviewSeeds();
     console.log('reviews seeded')
     process.exit(0)
 }
