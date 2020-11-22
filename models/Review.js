@@ -1,7 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Review extends Model { }
+class Review extends Model { 
+    bulkCreate(){}
+}
 
 Review.init(
     {
@@ -10,6 +12,10 @@ Review.init(
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
+        },
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false
         },
         review_text: {
             type: DataTypes.STRING,

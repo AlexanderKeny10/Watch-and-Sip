@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Review, User, } = require('../models');
+const Review = require('../models/Review.js');
+const User = require('../models/User.js');
 const withAuth = require('../utils/auth');
 
 // 
@@ -10,30 +11,25 @@ router.get('/', withAuth,(req, res) => {
     console.log('======================');
       Review.findAll({
         where: {
-          user_id: req.session.userId
+          id: req.session.userId
         },
         attributes: [
           'id',
+          'title',
+          'review_text',
           'created_at',
         ],
         include: [
-          // {
-          //   // model: Comment,
-          //   // attributes: ['id', 'post_id', 'user_id', 'created_at'],
-          //   // include: {
-          //   //   model: User,
-          //   //   attributes: ['username']
-          //   // }
-          // },
-          // {
-          //   model: User,
-          //   attributes: ['username']
-          // }
+
+          {
+            model: User,
+            attributes: ['username']
+          }
         ]
       })
         .then(dbPostData => {
-          const review = dbPostData.map(post => post.get({ plain: true }));
-          res.render('allReviews', { review, loggedIn: true });
+          const review = dbPostData.map(review => review.get({ plain: true }));
+          res.render('dashboard', { review, loggedIn: true });
         })
         .catch(err => {
           console.log(err);
@@ -44,34 +40,28 @@ router.get('/', withAuth,(req, res) => {
   router.get('/edit/:id', withAuth, (req, res) => {
     Review.findOne({
       where: {
-        user_id: req.session.userId,
+        id: req.session.userId,
         id: req.params.id
       },
       attributes: [
         'id',
+        'title',
+        'review_text',
         'created_at',
       ],
       include: [
-        // {
-        //   model: Comment,
-        //   attributes: ['id', 'post_id', 'user_id', 'created_at'],
-        //   include: {
-        //     model: User,
-        //     attributes: ['username']
-        //   }
-        // },
-        // {
-        //   model: User,
-        //   attributes: ['username']
-        // }
+        {
+          model: User,
+          attributes: ['username']
+        }
       ]
     })
     .then(dbPostData => {
       if (dbPostData) {
-        const post = dbPostData.get({ plain: true });
+        const review = dbPostData.get({ plain: true });
         
         res.render('edit-post', {
-          post,
+          review,
           loggedIn: true
         });
       } else {
@@ -82,20 +72,6 @@ router.get('/', withAuth,(req, res) => {
       res.status(500).json(err);
     });
   });
-  
-  router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-      res.redirect('/');
-      return;
-    }
 
-    
-    res.render('login');
-  });
-
-  router.get('/signup', (req, res) => {
-    res.render('signup');
-    return;
-  });
 
 module.exports = router;

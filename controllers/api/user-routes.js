@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { User, Review} = require('../../models');
+const User = require('../../models/User.js');
+const Review = require('../../models/Review.js');
 const withAuth = require('../../utils/auth');
 
 // get all users
@@ -23,21 +24,11 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Review,
-        attributes: ['id', 'title', 'post_url', 'created_at']
+        attributes: ['id', 'title', 'review_text', 'created_at']
       },
-      // {
-      //   model: Comment,
-      //   attributes: ['id', 'comment_text', 'created_at'],
-      //   include: {
-      //     model: Post,
-      //     attributes: ['title']
-      //   }
-      // },
       {
         model: Review,
         attributes: ['title'],
-        through: Vote,
-        as: 'voted_posts'
       }
     ]
   })
@@ -97,17 +88,18 @@ router.post('/login', (req, res) => {
         }
 
         req.session.save(() => {
-            req.session.userId = result.id;
-            req.session.username = result.username;
+            req.session.userId = dbUserData.id;
+            req.session.username = dbUserData.username;
             req.session.loggedIn = true;
 
-            res.json({ user: result, message: 'You are now logged in!' });
+            res.json({ user: dbUserData, message: 'You are now logged in!' });
         });
     });
 });
 
 // Logs out user if loggedin
 router.post('/logout', withAuth, (req, res) => {
+  console.log(req.session)
     if (req.session.loggedIn) {
         req.session.destroy(() => {
             res.status(204).end();

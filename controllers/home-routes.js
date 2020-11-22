@@ -1,7 +1,8 @@
 
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Review, User, } = require('../models');
+const Review = require('../models/Review.js');
+const User = require('../models/User.js');
 
 // get all review for homepage
 router.get('/', (req, res) => {
@@ -9,21 +10,15 @@ router.get('/', (req, res) => {
   Review.findAll({
     attributes: [
       'id',
+      'title',
+      'review_text',
       'created_at',
     ],
     include: [
-    //   {
-    //     model: Comment,
-    //     attributes: ['id', 'review_id', 'user_id', 'created_at'],
-    //     include: {
-    //       model: User,
-    //       attributes: ['username']
-    //     }
-    //   },
-    //   {
-    //     model: User,
-    //     attributes: ['username']
-    //   }
+      {
+        model: User,
+        attributes: ['username']
+      }
     ]
   })
     .then(dbPostData => {
@@ -48,21 +43,16 @@ router.get('/post/:id', (req, res) => {
     },
     attributes: [
       'id',
+      'title',
+      'review_text',
       'created_at',
+      
     ],
     include: [
-    //   {
-    //     model: Comment,
-    //     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-    //     include: {
-    //       model: User,
-    //       attributes: ['username']
-    //     }
-    //   },
-    //   {
-    //     model: User,
-    //     attributes: ['username']
-    //   }
+      {
+        model: User,
+        attributes: ['username']
+      }
     ]
   })
     .then(dbPostData => {

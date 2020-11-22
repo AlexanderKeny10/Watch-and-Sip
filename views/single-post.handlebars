@@ -1,1 +1,20 @@
 {{!-- Need to make layout for review form --}}
+{{> post-info post}}
+
+{{#if loggedIn}}
+<form class="review-form">
+  <div>
+    <textarea name="review-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">add review</button>
+  </div>
+</form>
+{{/if}}
+
+{{> reviews post.reviews}}
+
+{{#if loggedIn}}
+<script src="/javascript/reviews.js"></script>
+{{/if}}

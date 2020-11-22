@@ -49,6 +49,12 @@ User.init(
         underscored: true,
         modelName: 'user'
     }
+
 );
+
+// User.associate = function (models) {
+//     User.hasMany(models.review);
+// };
+
 
 module.exports = User;
