@@ -45,7 +45,7 @@ This project was created as an assignment for the PennLPS Fullstack Bootcamp.
 14. Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
 ## Description/Usage: 
-WORKING TITLE is an entertainment search app that allows the user to search for films, television shows as well as top trends by day/week.
+WORKING TITLE is an entertainment search app that allows the user to search for films, television shows and cocktails.
 
 ## Approach
 MVC Paradigm
@@ -55,11 +55,7 @@ MVC Paradigm
 - Swithed to Axios method instead of Fetch for the routes 
 
 
-## Notes:
-
-
-
-### You can see our deployed project [Here]()
+### You can see our deployed project [Here](https://quiet-ocean-97053.herokuapp.com/)
 
 #### Our repo can be found [Here](https://github.com/Aken00/reel-reviews-blog)
 
@@ -68,9 +64,25 @@ MVC Paradigm
 
 [The Movie Database API Documentation](https://developers.themoviedb.org/3/getting-started/introduction)
 
+[The Cocktail DB API Documentation](https://www.thecocktaildb.com/api.php)
+
 [Axios Documentation](https://vuejs.org/v2/cookbook/using-axios-to-consume-apis.html)
 
 [Express Routing](https://expressjs.com/en/guide/routing.html)
+
+[Sequelize Error Documentation](https://github.com/ForestAdmin/lumber/issues/17)
+
+[Sequelize ORM](https://sequelize.org/)
+
+[Sequelize-CLI Documentation](https://github.com/sequelize/cli)
+
+[API Reference Model Documentation](https://sequelize.org/master/class/lib/model.js~Model.html)
+
+[Lodash documentation](https://github.com/lodash/lodash/tree/4.17.20-npm)
+
+[Presentation Software](https://www.canva.com/)
+
+[Custom User Authentication](https://medium.com/@jgrisafe/custom-user-authentication-with-express-sequelize-and-bcrypt-667c4c0edef5)
 
 
 
