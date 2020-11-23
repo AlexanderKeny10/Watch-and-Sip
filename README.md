@@ -2,7 +2,7 @@
 
 This project was created as an assignment for the PennLPS Fullstack Bootcamp.
 
-## USER STORIES:
+## User Stories:
 
 * AS A USER I WANT TO BE ABLE TO SEARCH ALL MOVIES BY TITLE OR KEYWORD
 * AS A USER I WANT TO BE ABLE TO SEARCH ALL TV SHOWS BY TITLE OR KEYWORD
