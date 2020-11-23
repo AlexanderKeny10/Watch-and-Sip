@@ -79,6 +79,8 @@ MVC Paradigm
 
 [Sequelize-CLI Documentation](https://github.com/sequelize/cli)
 
+[SQL SELECT DB USE Statement](https://www.tutorialspoint.com/sql/sql-select-database.htm)
+
 [API Reference Model Documentation](https://sequelize.org/master/class/lib/model.js~Model.html)
 
 [Lodash documentation](https://github.com/lodash/lodash/tree/4.17.20-npm)
