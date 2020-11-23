@@ -1,6 +1,6 @@
 # Watch-and-Sip
 
-This project was created as an assignment for the PennLPS Fullstack Bootcamp.
+This project was created as an assignment for the PennLPS/TES Fullstack Bootcamp.
 
 ## User Stories:
 
