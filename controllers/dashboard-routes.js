@@ -10,7 +10,7 @@ router.get('/', withAuth,(req, res) => {
     console.log('======================');
       Review.findAll({
         where: {
-          userId: req.session.userId
+          id: req.session.userId
         },
         attributes: [
           'id',
@@ -30,7 +30,7 @@ router.get('/', withAuth,(req, res) => {
           console.log(dbPostData)
           console.log('Words to look for', req.session)
           const review = dbPostData.map((post) => post.get({ plain: true }));
-          console.log("uervmeourhveiurhvoeloopll", review)
+          console.log("review consolelog", review)
           res.render('dashboard', { review, loggedIn: true });
         })
         .catch(err => {
@@ -42,7 +42,7 @@ router.get('/', withAuth,(req, res) => {
   router.get('/edit/:id', withAuth, (req, res) => {
     Review.findOne({
       where: {
-        id: req.session.userId,
+        id: req.session.id,
         id: req.params.id
       },
       attributes: [
