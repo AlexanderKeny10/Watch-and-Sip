@@ -19,6 +19,7 @@ This project was created as an assignment for the PennLPS Fullstack Bootcamp.
 - dotenv
 - bcrypt
 - The Movie Database API
+- The CocktailDB API
 - MySQL/Sequelize ORM
 - Heroku
 - Sequelize CLI
