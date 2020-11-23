@@ -1,4 +1,4 @@
-# Watch-and-Sip
+# Watch & Sip
 
 This project was created as an assignment for the PennLPS/TES Fullstack Bootcamp.
 
