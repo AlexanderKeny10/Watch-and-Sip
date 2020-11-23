@@ -1,9 +1,9 @@
 :root {
-  --primary: #204779c0;
+  --primary: black;
   --secondary: rgb(22, 162, 255);
-  --tertiary: #f4f8f8;
+  --tertiary: #eed91e;
   --light-dark: #83f736;
-  --dark: #fbf7fd;
+  --dark: rgb(22, 162, 255);
   --border-radius: .3rem;
 }
 #searchBox {
@@ -26,7 +26,7 @@
     margin: 0;
     padding: 0;
     font-family: "";
-    color: rgb(0, 0, 0);
+    color: var(--dark);
     line-height: 1.5;
     font-size: 16px;
     text-align: center;
@@ -41,7 +41,7 @@
   }
   a {
     text-decoration: none;
-    color: black;
+    color: white;
     font-weight: bold;
     transition: color .1s;
   }
@@ -86,7 +86,7 @@
     min-height: 100px;
   }
   .btn {
-    color: rgb(97, 243, 30);
+    color: rgb(70, 126, 179);
   }
   form > div {
     margin-bottom: 2%;

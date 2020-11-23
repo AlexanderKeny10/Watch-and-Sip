@@ -1,27 +1,21 @@
-# WORKING TITLE
+# Watch & Sip
 
-## USER STORIES:
+This project was created as an assignment for the PennLPS/TES Fullstack Bootcamp.
 
-* AS A USER I WANT TO BE ABLE TO SEARCH ALL MOVIES BY TITLE OR GENRE
-* AS A USER I WANT TO BE ABLE TO SEARCH ALL TV SHOWS BY TITLE OR GENRE
-* AS A USER I WANT TO BE ABLE TO SEARCH FOR TOP TRENDS BY DAY OR WEEK FOR TV/MOVIES/ACTORS
+![](public/stylesheet/watch-andsip-ss.png)
+
+## Team Members
+
+- Alex Kenney
+- Britt Ralph
+- Shana Albright
+
+## User Stories:
+
+* AS A USER I WANT TO BE ABLE TO SEARCH ALL MOVIES BY TITLE OR KEYWORD
+* AS A USER I WANT TO BE ABLE TO SEARCH ALL TV SHOWS BY TITLE OR KEYWORD
+* AS A USER I WANT TO BE ABLE TO SEARCH FOR COCKTAILS BY TITLE OR KEYWORD
 * AS A USER I WANT TO BE ABLE TO ADD REVIEWS/RATINGS ABOUT USER EXPERIENCE
-
-
-
-TWO PARAM CATEGORIES
-WHAT: TV, MOVIE, ACTOR (ONE OF EACH)
-WHEN: BY DAY, BY WEEK (ONE OF EACH)
-
-
-* EXTRAS:
-* GENRE SEARCH
-* COCKTAILS
-* PAIRING OF THE WEEK, MOVIE-TV/WITH A COCKTAIL
-
-
-# WORKING TITLE
-This project was created as an assignment for the PennLPS Fullstack Bootcamp.
 
 ## Tools used for this project
 - Handlebars.js
@@ -33,11 +27,11 @@ This project was created as an assignment for the PennLPS Fullstack Bootcamp.
 - dotenv
 - bcrypt
 - The Movie Database API
+- The CocktailDB API
 - MySQL/Sequelize ORM
 - Heroku
-
-
-<img src = ""> 
+- Sequelize CLI
+- Lodash
 
 
 ## Objective
@@ -57,7 +51,7 @@ This project was created as an assignment for the PennLPS Fullstack Bootcamp.
 14. Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
 ## Description/Usage: 
-WORKING TITLE is an entertainment search app that allows the user to search for films, television shows as well as top trends by day/week.
+WATCH & SIP is an entertainment search app that allows the user to search for films, television shows and cocktails.
 
 ## Approach
 MVC Paradigm
@@ -65,13 +59,11 @@ MVC Paradigm
 ## Final Statements/ Conclusion
 - Had a difficult time finding an API that didn't have lengthy rules for usage
 - Swithed to Axios method instead of Fetch for the routes 
-
-
-## Notes:
+- Installed and tried to implement Sequelize-CLI but switched to Lodash
 
 
 
-### You can see our deployed project [Here]()
+### You can see our deployed project [Here](https://quiet-ocean-97053.herokuapp.com/)
 
 #### Our repo can be found [Here](https://github.com/Aken00/reel-reviews-blog)
 
@@ -80,10 +72,27 @@ MVC Paradigm
 
 [The Movie Database API Documentation](https://developers.themoviedb.org/3/getting-started/introduction)
 
+[The Cocktail DB API Documentation](https://www.thecocktaildb.com/api.php)
+
 [Axios Documentation](https://vuejs.org/v2/cookbook/using-axios-to-consume-apis.html)
 
 [Express Routing](https://expressjs.com/en/guide/routing.html)
 
+[Sequelize Error Documentation](https://github.com/ForestAdmin/lumber/issues/17)
+
+[Sequelize ORM](https://sequelize.org/)
+
+[Sequelize-CLI Documentation](https://github.com/sequelize/cli)
+
+[SQL SELECT DB USE Statement](https://www.tutorialspoint.com/sql/sql-select-database.htm)
+
+[API Reference Model Documentation](https://sequelize.org/master/class/lib/model.js~Model.html)
+
+[Lodash documentation](https://github.com/lodash/lodash/tree/4.17.20-npm)
+
+[Presentation Software](https://www.canva.com/)
+
+[Custom User Authentication](https://medium.com/@jgrisafe/custom-user-authentication-with-express-sequelize-and-bcrypt-667c4c0edef5)
 
 
 
