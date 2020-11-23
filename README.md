@@ -2,18 +2,12 @@
 
 This project was created as an assignment for the PennLPS Fullstack Bootcamp.
 
-# WORKING TITLE
-
 ## USER STORIES:
 
 * AS A USER I WANT TO BE ABLE TO SEARCH ALL MOVIES BY TITLE OR KEYWORD
 * AS A USER I WANT TO BE ABLE TO SEARCH ALL TV SHOWS BY TITLE OR KEYWORD
 * AS A USER I WANT TO BE ABLE TO SEARCH FOR COCKTAILS BY TITLE OR KEYWORD
 * AS A USER I WANT TO BE ABLE TO ADD REVIEWS/RATINGS ABOUT USER EXPERIENCE
-
-
-# WORKING TITLE
-This project was created as an assignment for the PennLPS Fullstack Bootcamp.
 
 ## Tools used for this project
 - Handlebars.js
@@ -27,6 +21,8 @@ This project was created as an assignment for the PennLPS Fullstack Bootcamp.
 - The Movie Database API
 - MySQL/Sequelize ORM
 - Heroku
+- Sequelize CLI
+- Lodash
 
 
 <img src = ""> 
