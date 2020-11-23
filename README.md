@@ -4,6 +4,12 @@ This project was created as an assignment for the PennLPS/TES Fullstack Bootcamp
 
 <img src = "public/stylesheet/WATCH&SIP SCREENSHOT 1.jpg"> 
 
+# Team Members
+
+Alex Kenney
+Britt Ralph
+Shana Albright
+
 ## User Stories:
 
 * AS A USER I WANT TO BE ABLE TO SEARCH ALL MOVIES BY TITLE OR KEYWORD
