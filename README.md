@@ -26,7 +26,7 @@ This project was created as an assignment for the PennLPS/TES Fullstack Bootcamp
 - Lodash
 
 
-<img src = ""> 
+<img src = "public/stylesheet/WATCH&SIP SCREENSHOT 1.jpg"> 
 
 
 ## Objective
