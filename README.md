@@ -1,4 +1,4 @@
-# Watch-and-Sip
+## Watch-and-Sip
 
 This project was created as an assignment for the PennLPS/TES Fullstack Bootcamp.
 
@@ -6,9 +6,9 @@ This project was created as an assignment for the PennLPS/TES Fullstack Bootcamp
 
 # Team Members
 
-Alex Kenney
-Britt Ralph
-Shana Albright
+- Alex Kenney
+- Britt Ralph
+- Shana Albright
 
 ## User Stories:
 
