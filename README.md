@@ -2,6 +2,8 @@
 
 This project was created as an assignment for the PennLPS/TES Fullstack Bootcamp.
 
+<img src = "public/stylesheet/WATCH&SIP SCREENSHOT 1.jpg"> 
+
 ## User Stories:
 
 * AS A USER I WANT TO BE ABLE TO SEARCH ALL MOVIES BY TITLE OR KEYWORD
@@ -24,9 +26,6 @@ This project was created as an assignment for the PennLPS/TES Fullstack Bootcamp
 - Heroku
 - Sequelize CLI
 - Lodash
-
-
-<img src = "public/stylesheet/WATCH&SIP SCREENSHOT 1.jpg"> 
 
 
 ## Objective
