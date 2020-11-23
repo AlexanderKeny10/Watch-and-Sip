@@ -46,7 +46,7 @@ This project was created as an assignment for the PennLPS Fullstack Bootcamp.
 14. Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
 ## Description/Usage: 
-WORKING TITLE is an entertainment search app that allows the user to search for films, television shows and cocktails.
+WATCH & SIP is an entertainment search app that allows the user to search for films, television shows and cocktails.
 
 ## Approach
 MVC Paradigm
@@ -54,6 +54,8 @@ MVC Paradigm
 ## Final Statements/ Conclusion
 - Had a difficult time finding an API that didn't have lengthy rules for usage
 - Swithed to Axios method instead of Fetch for the routes 
+- Installed and tried to implement Sequelize-CLI but switched to Lodash
+
 
 
 ### You can see our deployed project [Here](https://quiet-ocean-97053.herokuapp.com/)
