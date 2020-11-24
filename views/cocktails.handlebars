@@ -1,0 +1,12 @@
+
+{{#each cocktailResults}}
+<div class="card" style="width: 18rem;">
+    {{#if this.strDrinkThumb}}
+  <img src="{{this.strDrinkThumb}}" class="card-img-top" alt="...">
+  {{/if}}
+  <div class="card-body">
+    <h5 class="card-title">{{this.strDrink}}</h5>
+    <p class="card-text">{{this.strInstructions}}</p>
+  </div>
+</div>
+{{/each}}

@@ -1,30 +1,25 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Comment } = require('../models');
+const Review = require('../models/Review.js');
+const User = require('../models/User.js');
 const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, (req, res) => {
+
+router.get('/', withAuth,(req, res) => {
     console.log(req.session);
     console.log('======================');
-      Post.findAll({
+      Review.findAll({
         where: {
-          user_id: req.session.user_id
+          id: req.session.userId
         },
         attributes: [
           'id',
-          'post_content',
           'title',
+          'review_text',
           'created_at',
         ],
         include: [
-          {
-            model: Comment,
-            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-            include: {
-              model: User,
-              attributes: ['username']
-            }
-          },
+
           {
             model: User,
             attributes: ['username']
@@ -32,8 +27,11 @@ router.get('/', withAuth, (req, res) => {
         ]
       })
         .then(dbPostData => {
-          const posts = dbPostData.map(post => post.get({ plain: true }));
-          res.render('dashboard', { posts, loggedIn: true });
+          console.log(dbPostData)
+          console.log('Words to look for', req.session)
+          const review = dbPostData.map((post) => post.get({ plain: true }));
+          console.log("review consolelog", review)
+          res.render('dashboard', { review, loggedIn: true });
         })
         .catch(err => {
           console.log(err);
@@ -42,24 +40,18 @@ router.get('/', withAuth, (req, res) => {
   });
 
   router.get('/edit/:id', withAuth, (req, res) => {
-    Post.findOne({
+    Review.findOne({
       where: {
-        user_id: req.session.user_id,
+        id: req.session.id,
         id: req.params.id
       },
       attributes: [
         'id',
-        'post_content',
         'title',
+        'review_text',
         'created_at',
       ],
       include: [
-        {
-          include: {
-            model: User,
-            attributes: ['username']
-          }
-        },
         {
           model: User,
           attributes: ['username']
@@ -68,10 +60,10 @@ router.get('/', withAuth, (req, res) => {
     })
     .then(dbPostData => {
       if (dbPostData) {
-        const post = dbPostData.get({ plain: true });
+        const review = dbPostData.get({ plain: true });
         
         res.render('edit-post', {
-          post,
+          review,
           loggedIn: true
         });
       } else {
@@ -82,6 +74,6 @@ router.get('/', withAuth, (req, res) => {
       res.status(500).json(err);
     });
   });
-  
+
 
 module.exports = router;
