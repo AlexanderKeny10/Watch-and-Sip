@@ -23,7 +23,8 @@ router.get('/', (req, res) => {
   })
     .then(dbPostData => {
       const posts = dbPostData.map(post => post.get({ plain: true }));
-
+      console.log(posts, 'words to look for agian');
+      // dbPostData[0]
       res.render('homepage', {
         posts,
         loggedIn: req.session.loggedIn
@@ -46,7 +47,7 @@ router.get('/post/:id', (req, res) => {
       'title',
       'review_text',
       'created_at',
-      
+
     ],
     include: [
       {
@@ -76,18 +77,18 @@ router.get('/post/:id', (req, res) => {
 
 
 router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-      res.redirect('/dashboard');
-      return;
-    }
-
-    
-    res.render('login');
-  });
-
-  router.get('/signup', (req, res) => {
-    res.render('signup');
+  if (req.session.loggedIn) {
+    res.redirect('/dashboard');
     return;
-  });
+  }
 
-  module.exports = router;
+
+  res.render('login');
+});
+
+router.get('/signup', (req, res) => {
+  res.render('signup');
+  return;
+});
+
+module.exports = router;

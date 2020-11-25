@@ -15,26 +15,16 @@
   </form>
 </section>
 
-{{#if review.length}}
+{{#if posts.length}}
 <section>
   <div class="col-12 col-md-6">
   <h2>Your Reviews</h2>
   <ol>
-    {{#each review as |review|}}
+    {{#each posts as |post|}}
     <li>
-      {{!-- {{> post-info review}} --}}
-      <div class="card">
-        <div class="card-header">
-          <a href="/post/{{id}}" target="_blank">{{title}}</a>
-          <p class="card-text">Posted by {{user.username}} on {{format_date created_at}}
-            |
-            <a href="/post/{{id}}"></a>{{review.length}} {{format_plural "review" review.length}}</p>
-        </div>
-        <div class="card-body">
-          <p class="card-text">{{review_text}}</p>
-        </div>
-      </div>
-      <a href="/dashboard/edit/{{review.id}}" class="edit-link">Edit Review</a>
+      {{> post-info post}}  
+      
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Review</a>
     </li>
     {{/each}}
   </ol>

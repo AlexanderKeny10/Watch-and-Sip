@@ -10,7 +10,7 @@ router.get('/', withAuth,(req, res) => {
     console.log('======================');
       Review.findAll({
         where: {
-          id: req.session.userId
+          user_id: req.session.user_id
         },
         attributes: [
           'id',
@@ -42,7 +42,7 @@ router.get('/', withAuth,(req, res) => {
   router.get('/edit/:id', withAuth, (req, res) => {
     Review.findOne({
       where: {
-        id: req.session.id,
+        user_id: req.session.user_id,
         id: req.params.id
       },
       attributes: [
