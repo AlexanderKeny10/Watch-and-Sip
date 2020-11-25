@@ -1,3 +1,30 @@
+<main class="col-auto">
+{{!-- <main class="flex-row justify-space-between"> --}}
+  <div class="col-12 col-md-4">
+  <h3 class="card-header text-uppercase">Looking for options on what to watch tonight?</h3>
+  <p>Try our app</p>
+  <form id="movie-form" class="card-body">
+    <label class="form-label" for="movieTitle"> Enter a title or keyword the movie </label>
+    <input name="movieTitle" id="movieTitle" type="text" autofocus="true" class="form-input" />
+    <button type="submit" class="btn" id="searchMovieBtn">Search Movies </button>
+  </form>
+  
+  <form id="tv-form" class="card-body">
+    <label class="form-label" for="tvTitle"> Enter a title or keyword for the tv show </label>
+    <input name="tvTitle" id="tvTitle" type="text" autofocus="true" class="form-input" />
+    <button type="submit" class="btn" id="searchTvBtn">Search TV Shows </button>
+  
+  </form>
+    <form id="drink-form" class="card-body">
+    <label class="form-label" for="cocktail"> Enter any cocktail for ingredients </label>
+    <input name="cocktail" id="cocktail" type="text" autofocus="true" class="form-input" />
+    <button type="submit" class="btn" id="searchCocktailBtn">Search Cocktail </button>
+  </form> 
+  </div>
+     
+  </main> 
+    
+
 <ol class="review-list">
 {{#each posts as |post|}}
     <li>
@@ -5,3 +32,5 @@
     </li>
 {{/each}}
 </ol>
+
+<script src="/javascript/add-review.js"></script>

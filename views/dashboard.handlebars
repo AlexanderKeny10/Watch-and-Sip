@@ -1,16 +1,16 @@
 <section>
-  <h2>Reviews</h2>
-<p>Create a review of your favorite movie/tv show</p>
+  <h2>Want to add a review?</h2>
+<p>Write a review of your favorite movie/tv show below</p>
   <form class="new-post-form">
     <div>
-      <label for="post-title">Title</label>
+      <label for="post-title">Enter title</label>
       <input type="text" id="post-title" name="post-title" />
     </div>
     <div>
-      <label for="post-review">Review</label>
+      <label for="post-review">Write review</label>
       <input type="text" id="post-review" name="post-review" />
     </div>
-    <button type="submit" id="add-review" class="btn">add Review</button>
+    <button type="submit" id="add-review" class="btn">Submit</button>
   </form>
 </section>
 
@@ -28,7 +28,7 @@
 </section>
 {{/if}}
 
-<script src="/javascript/add-review.js"></script> --}}
+<script src="/javascript/add-review.js"></script> 
 
 
 <!DOCTYPE html>
@@ -44,15 +44,16 @@
   <nav class="navbar">
     <ul class="flex-row">
       <li class="li-inline nav-item"><a href="/">Home</a></li>
-      <li class="li-inline nav-item"><a href="/sign-in">Sign In</a></li>
+      {{!-- <li class="li-inline nav-item"><a href="/sign-in">Sign In</a></li> --}}
       <li class="li-inline nav-item"><a href="#" id="all-reviews">Reviews</a></li>
     </ul>
   </nav>
   <header class="hero">
     <h1 class="app-title"><a href="/dashboard">Your Dashboard</a></h1>
   </header>
-  <main class="col-auto">
-    {{{body}}}
+  {{!-- <main class="col-auto"> --}}
+
+    
     
   </main>
 {{!-- <script src="/controllers/dashboard-routes.js"></script> --}}

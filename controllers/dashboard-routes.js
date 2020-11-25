@@ -31,6 +31,7 @@ router.get('/', withAuth,(req, res) => {
           const review = dbPostData.map(review => review.get({ plain: true }));
           res.render('dashboard', { review, loggedIn: true });
         })
+      
         .catch(err => {
           console.log(err);
           res.status(500).json(err);
