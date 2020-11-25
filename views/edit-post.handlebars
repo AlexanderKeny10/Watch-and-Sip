@@ -5,18 +5,17 @@
   </h2>
   <form class="edit-post-form">
     <div>
-      <input name="post-title" type="text" value="{{post.title}}" />
+      <input name="post-title" type="text" value="{{review.title}}" />
       <span>({{format_review.title}})</span>
     </div>
     <br>
     <div>
-      <input name="post-review" type="text" value="{{post.review_text}}" />
-      <span>({{format_review.review_text}})</span>
+      <input name="post-review_text" type="text" value="{{review.review_text}}" />
+      {{!-- <span>({{format_review.review_text}})</span> --}}
     </div>
     <div>
-      Posted by you on {{format_date post.created_at}}
+      Posted by you on {{format_date review.created_at}}
       |
-      {{!-- <a href="/post/{{post.id}}">{{post.review.length}} {{format_plural "review" post.review.length}}</a> --}}
     </div>
     <button type="submit">Save Review</button>
     <button type="button" class="delete-post-btn">Delete Review</button>

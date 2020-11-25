@@ -2,7 +2,7 @@ async function reviewFormHandler(event) {
     event.preventDefault();
   
     const title = document.querySelector('input[name="post-title"]').value;
-    const review_text = document.querySelector('input[name="review-text"]').value;
+    const review_text = document.querySelector('input[name="post-review_text"]').value;
   
     console.log(title)
     console.log()

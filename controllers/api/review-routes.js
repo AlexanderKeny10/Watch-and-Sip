@@ -73,16 +73,16 @@ router.post('/', withAuth, (req, res) => {
 });
 
 router.put('/:id', withAuth, (req, res) => {
-    Review.update(
-        {
-            title: req.body.title
-        },
-        {
-            review_text: req.body.review_text
-        },
-        {
-            id: req.body.id
-        },
+    Review.update(req.body,
+        // {
+        //     title: req.body.title
+        // },
+        // {
+        //     review_text: req.body.review_text
+        // },
+        // {
+        //     id: req.body.id
+        // },
         {
             where: {
                 id: req.params.id

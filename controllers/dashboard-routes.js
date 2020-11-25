@@ -29,9 +29,9 @@ router.get('/', withAuth,(req, res) => {
         .then(dbPostData => {
           console.log(dbPostData)
           console.log('Words to look for', req.session)
-          const review = dbPostData.map((post) => post.get({ plain: true }));
-          console.log("review consolelog", review)
-          res.render('dashboard', { review, loggedIn: true });
+          const posts = dbPostData.map((post) => post.get({ plain: true }));
+          console.log("review consolelog", posts)
+          res.render('dashboard', { posts, loggedIn: true });
         })
         .catch(err => {
           console.log(err);
