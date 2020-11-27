@@ -7,8 +7,8 @@ const helpers = require('./utils/helpers');
 const chalk = require('chalk');
 
 const log = console.log;
-const error = chalk.bold.red;
-const warning = chalk.keyword('orange');
+// const error = chalk.bold.red;
+// const warning = chalk.keyword('orange');
 // var _ = require('lodash'); 
 
 const app = express();
@@ -49,6 +49,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // turn on routes
 app.use(routes);
+
+// console.log(error('Error!'));
+// console.log(warning('Warning!'));
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
