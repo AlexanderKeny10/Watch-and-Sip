@@ -2,7 +2,7 @@
 
 This project was created as an assignment for the PennLPS/TES Fullstack Bootcamp.
 
-<img src = “public/WATCH&SIP SCREENSHOT 1.jpg”>
+<img src = “public/stylesheet/WATCH&SIP SCREENSHOT 1.jpg”>
 
 ## Team Members
 
