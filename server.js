@@ -4,7 +4,12 @@ const routes = require('./controllers');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const helpers = require('./utils/helpers');
-var _ = require('lodash'); 
+const chalk = require('chalk');
+
+const log = console.log;
+const error = chalk.bold.red;
+const warning = chalk.keyword('orange');
+// var _ = require('lodash'); 
 
 const app = express();
 
@@ -47,5 +52,8 @@ app.use(routes);
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log(`Listening now on Port ${process.env.PORT}`));
+    app.listen(PORT, () => 
+    
+    console.log(chalk.green('Listening now on Port 3001')));
+
 });
