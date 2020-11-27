@@ -1,5 +1,7 @@
 # Watch & Sip
 
+<img src= "public/WATCH&SIP SCREENSHOT 1.jpg>
+
 This project was created as an assignment for the PennLPS/TES Fullstack Bootcamp.
 
 
