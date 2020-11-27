@@ -17,11 +17,11 @@ router.use((req, res) => {
   res.status(404).end();
 });
 
-const spinner = ora(`Loading ${chalk.yellow('server')}`).start();
+const spinner = ora(`Loading ${chalk.yellow('Fall 🍁')}`).start();
 
 setTimeout(() => {
 	spinner.color = 'red';
-	spinner.text = 'Loading server';
+	spinner.text = 'Loading server 😃';
 }, 1000);
 
 module.exports = router;
