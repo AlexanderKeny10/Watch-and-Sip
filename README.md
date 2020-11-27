@@ -30,8 +30,8 @@ This project was created as an assignment for the PennLPS/TES Fullstack Bootcamp
 - The CocktailDB API
 - MySQL/Sequelize ORM
 - Heroku
-- Sequelize CLI
-- Lodash
+- Chalk
+- Ora
 
 
 ## Objective
@@ -59,13 +59,14 @@ MVC Paradigm
 ## Final Statements/ Conclusion
 - Had a difficult time finding an API that didn't have lengthy rules for usage
 - Swithed to Axios method instead of Fetch for the routes 
-- Installed and tried to implement Sequelize-CLI but switched to Lodash
-
+- Installed and tried to implement Lodash, Sequelize-CLI(broke our code multiple times) and finally Tabulator, but ultimately switched to Chalk and Ora as to not break our functioning code
 
 
 ### You can see our deployed project [Here](https://quiet-ocean-97053.herokuapp.com/)
 
 #### Our repo can be found [Here](https://github.com/Aken00/reel-reviews-blog)
+
+#### Our presentation can be found [Here](https://www.canva.com/design/DAEN5fZ6xBU/vsvkNciuyuGSCAUHEQ0-bw/view?utm_content=DAEN5fZ6xBU&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
 
 ## Sites used for Knowledge:
@@ -93,6 +94,12 @@ MVC Paradigm
 [Presentation Software](https://www.canva.com/)
 
 [Custom User Authentication](https://medium.com/@jgrisafe/custom-user-authentication-with-express-sequelize-and-bcrypt-667c4c0edef5)
+
+[Tabulator Documentation](https://www.npmjs.com/package/tabulator-tables)
+
+[Chalk Documentation](https://www.npmjs.com/package/chalk)
+
+[Ora Documentation](https://www.npmjs.com/package/ora)
 
 
 
