@@ -66,12 +66,11 @@ MVC Paradigm
 
 ### You can see our deployed project [Here](https://quiet-ocean-97053.herokuapp.com/)
 
-#### Our repo can be found [Here](https://github.com/Aken00/reel-reviews-blog)
+#### Our repo can be found [Here](https://github.com/Alexanderkeny10/reel-reviews-blog)
 
 #### Our presentation can be found [Here](https://www.canva.com/design/DAEN5fZ6xBU/vsvkNciuyuGSCAUHEQ0-bw/view?utm_content=DAEN5fZ6xBU&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
 
-## Sites used for Knowledge:
 
 [The Movie Database API Documentation](https://developers.themoviedb.org/3/getting-started/introduction)
 
